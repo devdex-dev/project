@@ -1,0 +1,50 @@
+.bg {
+  --ion-background-color: rgb(255, 255, 255);
+  --ion-background-color: linear-gradient(
+    180deg,
+    rgb(13, 117, 173) 0%,
+    rgb(139, 200, 233) 0%,
+    rgb(5, 53, 101) 100%
+  );
+  
+}
+.detail {
+  bottom: 5%;
+  margin: 50px;
+  text-align: center;
+
+  p {
+    color: rgb(133, 68, 68);
+    font-size: 1em;
+    font-weight: 300;
+  }
+  span {
+    color: rgb(133, 68, 68);
+    font-size: 1.3em;
+    font-weight: 500;
+  }
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+
+
+.buttons{
+  margin-top: 3.5rem;
+  bottom: 5%;
+  margin: 40px;
+  text-align: center;
+  
+  ion-button {
+    --background: rgb(54, 230, 246) !important;
+    margin: 1.5rem;
+    --border-radius: .5rem;
+    box-shadow: 5px 10px 8px #232323;
+    
+  }
+}
+
