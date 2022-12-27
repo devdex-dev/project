@@ -1,2 +1,3 @@
-# project
-Final Integ Project
+# IONIC PROJECT
+Final Integ Project WEATHER, TEMPERATURE and MAP APK
+
