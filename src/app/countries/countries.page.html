@@ -1,0 +1,88 @@
+
+  <ion-header>
+    <ion-toolbar >
+      <ion-buttons>
+        <ion-back-button defaultHref="landing"></ion-back-button>
+        <ion-title>Search for a country</ion-title>
+      </ion-buttons>
+  </ion-toolbar>
+  <div class="bg"> 
+    <ion-content [fullscreen]="true">
+  <div>
+    <ion-searchbar
+      animated="true"
+      color="none"
+      [(ngModel)]="countryName"
+      (ngModelChange)="ngOnInit()"
+      placeholder="Search .."
+    ></ion-searchbar>
+  </div>
+
+
+  <div *ngIf="!loading">
+   <!-- Country Flag -->
+    <ion-card class="padd">
+      <ion-item lines="none"> 
+        <img [src]="flag_obj.png" alt="Country Flag" />
+      </ion-item>
+    </ion-card>
+   <!-- Country Flag End -->
+
+   <!-- Country Descriptions -->
+    <ion-card>
+    <ion-item lines="none"
+      ><span>Common Name</span>
+      <h3 slot="end">{{name}} ({{cca3}})</h3>
+    </ion-item>
+    <ion-item *ngIf="native_name" lines="none"
+      ><span>Native Name</span>
+      <h3 slot="end">{{native_name.official}}</h3>
+    </ion-item>
+    <ion-item lines="none"
+      ><span>Capital</span>
+      <h3 slot="end">{{capital}}</h3>
+    </ion-item>
+    <ion-item lines="none"
+      ><span>Language</span>
+      <h3 slot="end">{{lang_name1}} {{lang_name2}}</h3>
+    </ion-item>
+    <ion-item lines="none"
+      ><span>Region</span>
+      <h3 slot="end">{{region}}</h3>
+    </ion-item>
+    <ion-item lines="none"
+      ><span>Sub-Region</span>
+      <h3 slot="end">{{subregion}}</h3>
+    </ion-item>
+    <ion-item lines="none"
+      ><span>Time Zone</span>
+      <h3 slot="end">{{timezone}}</h3>
+    </ion-item>
+    <ion-item lines="none"
+      ><span>Currency</span>
+      <h3 slot="end">{{currency.name}}</h3>
+    </ion-item>
+    <ion-item lines="none"
+      ><span>Currency Symbol</span>
+      <h3 slot="end">{{currency.symbol}}</h3>
+    </ion-item>
+    <ion-item lines="none"> 
+      <span>Area</span>
+      <h3 slot="end">{{area}} km²</h3>
+    </ion-item>
+  </ion-card>
+  </div>
+  <!-- Country Descriptions End -->
+
+  <div *ngIf="loading" class="noData">
+    <div class="align">
+      <div class="center flag1">
+        <img src="../../assets/36daysoftype - GIFS.gif" alt="" />
+      </div>
+      <div class="center">
+        <h1>"<span class="search1">Explore</span> around the world in just one click."</h1> 
+     </div> 
+    </div>
+  </div>
+</ion-content>
+  </div>

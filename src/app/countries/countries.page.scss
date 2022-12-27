@@ -1,0 +1,49 @@
+.bg { 
+    --ion-background-color: rgb(255, 255, 255);
+    --ion-background-color: linear-gradient(
+      180deg,
+      rgb(13, 117, 173) 0%,
+      rgb(139, 200, 233) 0%,
+      rgb(5, 53, 101) 100%
+    );
+  }
+  ion-searchbar {
+    --border-radius: .5rem;
+  }
+
+  .center {
+
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #ffffff;
+      .search1{
+        color: rgb(54, 230, 246);
+        
+      }
+  }
+  .align {
+    display: flex;
+    flex-direction: column;
+  }
+  ion-card {
+  --ion-item-background: rgb(5, 130, 197) !important;
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 5px 10px 8px #302f2f;
+  margin: 10px;
+}
+ion-title{
+  margin-right: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+img{
+    padding: 25px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}

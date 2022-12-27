@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons>
+      <ion-back-button defaultHref="landing"></ion-back-button>
+      <ion-title>Search for a city</ion-title>
+    </ion-buttons>
+</ion-toolbar>
+<div class="bg">  
+    <ion-content [fullscreen]="true">
+    <div>
+      <ion-searchbar
+        animated="true"
+        color="none"
+        [(ngModel)]="cityName"
+        (ngModelChange)="loadData()"
+        placeholder="Search ..."
+      ></ion-searchbar>
+    </div>
+    <!-- !loading -->
+    <div *ngIf="!loading">
+      <ion-card color="dark">
+        <ion-item lines="none">
+          <div class="center">
+            <ion-icon slot="start" name="location"></ion-icon>
+            <span class="city">{{cityName}}</span>
+          </div>
+          <ion-label class="dates1" style="font-size: 1rem" slot="end"
+            >{{todayDate | date: "EEE dd MMM"}}</ion-label
+          >
+        </ion-item>
+        <!-- Temperature Page -->
+        <ion-item lines="none">
+          <ion-label class="center">
+            <span
+              style="
+                font-size: 5rem;
+                font-weight: bold;
+                color: #faf9f9;
+              "
+              >{{(weatherTemp?.temp - 273.15).toFixed(0)}}</span>
+
+            <span
+              style="
+                font-size: 3rem;
+                font-weight: bold;
+                color: #ff8a15;
+                margin-bottom: 25px;
+              "
+              >°</span
+            >
+            <img
+              slot="end"
+              [src]="weatherIcon"
+              alt="Weather Icon"
+              width="180spx"
+              height="200px"
+            />
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="description" style="font-size: 1.5rem; font-weight: Bold" slot="end"
+            >{{weatherDetails.main}} |
+            <span style="font-size: 1rem; font-weight: light"
+              >{{weatherDetails.description}}</span
+            >
+          </ion-label>
+        </ion-item>
+      </ion-card>
+
+      <ion-card class="padd">
+        <ion-item lines="none">
+          <ion-icon
+            size="large"
+            slot="start"
+            name="arrow-up-outline"
+          ></ion-icon>
+          <span>Maximum Temperature</span>
+          <span slot="end">{{(weatherTemp.temp_max - 273.15).toFixed(0)}}</span>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-icon
+            size="large"
+            slot="start"
+            name="arrow-down-outline"
+          ></ion-icon>
+          <span>Minimum Temperature</span>
+          <span slot="end">{{(weatherTemp.temp_min - 273.15).toFixed(0)}}</span>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-icon size="large" slot="start" name="water-outline"></ion-icon>
+          <span>Humidity</span>
+          <span slot="end">{{weatherTemp.humidity }}</span>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-icon size="large" slot="start" name="filter-sharp"></ion-icon>
+          <span>Sea Level</span>
+          <span slot="end">{{weatherTemp.sea_level }}</span>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-icon
+            size="large"
+            slot="start"
+            name="trail-sign-outline"
+          ></ion-icon>
+          <span>Ground Level</span>
+          <span slot="end">{{weatherTemp.grnd_level }}</span>
+        </ion-item>
+      </ion-card>
+    </div>
+    <div *ngIf="loading" class="noData">
+      <div class="align">
+          <div class="center">
+              <img src="../../assets/[GIF] Weather.gif" alt="" />
+          </div>
+          <div class="center">
+              <h1>"<span class="search1">Easy</span> way to track weather's update."</h1> 
+           </div> 
+      </div>
+    </div>
+  </ion-content>
+</div>
